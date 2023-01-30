@@ -8,14 +8,14 @@
             @apply text-2xl lg:text-4xl text-[#222222] mb-10 text-center underline underline-offset-1;
         }
         p {
-            @apply text-center text-[#777777];
+            @apply text-[#777777] text-center;
         }
 
         .newsletter {
             @apply flex justify-center mt-10 max-w-[700px] m-auto flex-col md:flex-row gap-6 md:gap-0;
 
             input {
-                @apply w-full md:w-[calc(100%-230px)] rounded md:rounded-[0px] md:rounded-l p-2 bg-[#F5F5F5];
+                @apply md:w-[calc(100%-230px)] rounded md:rounded-[0px] md:rounded-l p-2 bg-[#F5F5F5] w-full;
             }
 
             .btnSuscribe{

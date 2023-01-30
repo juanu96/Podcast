@@ -2,7 +2,7 @@
     @apply w-full;
 
     .podcastrow {
-        @apply w-4/5 m-auto shadow-xl bg-white rounded-xl p-10 mt-[-50px];
+        @apply w-4/5 m-auto bg-white rounded-xl p-10 mt-[-50px] shadow-xl;
 
         .allPodcast {
             @apply flex flex-col md:flex-row justify-between items-center mb-12;
@@ -43,7 +43,7 @@
                 }
             }
             .tagsInfo {
-                @apply mt-5 md:mt-0 order-2 xl:order-3 h-fit;
+                @apply md:mt-0 order-2 xl:order-3 h-fit mt-5 ;
                 .categorieLink {
                     @apply mb-2 xl:mb-4;
                     

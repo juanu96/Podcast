@@ -1,15 +1,13 @@
-import React, { createContext, useState, Suspense, useEffect } from "react";
-//import Home from './Pages/Home'
+import React, { createContext, useState } from "react";
+import Home from './Pages/Home'
 import Layout from './Pages/Layout'
 import Post from './Pages/Post/Post'
 import Podcast from './Pages/Podcast/Podcast'
 import NoPage from './Pages/NoPage'
-import Loader from './Pages/Loader'
 import { Route, Routes } from "react-router-dom"
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 AOS.init({ once: true });
-const Home = React.lazy(() => import('./Pages/Home'));
 export const Store = createContext(null);
 
 function App() {

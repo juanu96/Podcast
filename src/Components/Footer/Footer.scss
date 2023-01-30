@@ -4,7 +4,7 @@
         @apply w-4/5 m-auto;
 
         .footercontent {
-            @apply grid gap-8 grid-cols-1 md:grid-cols-2 xl:gap-0 xl:grid-cols-[40%,20%,20%,20%];
+            @apply  grid-cols-1 md:grid-cols-2 xl:gap-0 xl:grid-cols-[40%,20%,20%,20%] grid gap-8;
 
             p,
             a {
@@ -12,7 +12,7 @@
             }
 
             .socialIcon {
-                @apply flex justify-between items-center max-w-[300px];
+                @apply flex justify-between max-w-[300px] items-center;
                 a {
                     @apply bg-secondary text-xl text-white w-10 h-10 rounded-full flex justify-center items-center;
                 }
@@ -23,7 +23,7 @@
             }
 
             .colum-footer .itemfooter a {
-                @apply leading-10 text-[#999999] text-[14px];
+                @apply leading-10 text-[#999999] text-sm;
             }
 
             .colum-footer .content-logo {
