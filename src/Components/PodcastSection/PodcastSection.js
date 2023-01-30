@@ -3,6 +3,7 @@ import { useLazyQuery } from "@apollo/client";
 import Button from '../Elements/Button';
 import './PodcastSection.scss'
 import { PODCASTS } from '../GraphQL'
+import Badget from '../../Images/badget.svg'
 export default function PodcastSection() {
   const [numberOfPost, setNumberOfPost] = useState(3);
   const [getPost, { loading, data }] = useLazyQuery(PODCASTS)
@@ -27,7 +28,13 @@ export default function PodcastSection() {
   return (
     <div className='podcastSection'>
       <div className='podcastrow'>
-        <div className='allPodcast'>
+        <div className='allPodcast'
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true">
           <h2>Latest Podcast Episodes</h2>
           <Button link='blog' text="View All" />
         </div>
@@ -45,6 +52,8 @@ export default function PodcastSection() {
                     data-aos-mirror="true">
                     <div className="image">
                       <img src={item?.featuredImage?.node?.mediaItemUrl} alt="" />
+                      {key === 0 ? <img className='badget' src={Badget} alt="" /> : null}
+
                     </div>
                     <div className="content">
                       <h4>{item.title}</h4>

@@ -5,7 +5,7 @@
         @apply w-4/5 m-auto;
     }
     .herosectionrowcontent {
-        @apply grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center py-28;
+        @apply grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center py-28 pt-0;
 
         .heroinformation {
             @apply order-2 sm:order-2 md:order-2 lg:order-1;
@@ -13,7 +13,12 @@
             .line {
                 @apply m-0 overflow-hidden text-left;
                 ::before {
-                    @apply block float-left mt-3 border-t border-primary w-6 content-none;
+                    display: block;
+                    float: left;
+                    margin-top: 0.7em; 
+                    border-top: 2px solid #F13C45;
+                    width: 25px;
+                    content: "";
                 }
             }
 

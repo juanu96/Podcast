@@ -1,12 +1,13 @@
 import React from 'react'
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import '././Gallery.scss'
 import { GALLERY } from "../GraphQL"
-
-
 export default function Gallery() {
-  const { loading, data } = useQuery(GALLERY);
-
+  const { loading, data } = useQuery(GALLERY, {
+    variables: {
+      uri: window.location.pathname
+    }
+  });
   return (
     <div className='gallerySection'>
       <div className='galleryrow'>
@@ -16,10 +17,10 @@ export default function Gallery() {
           data-aos-delay="50"
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"
-          data-aos-mirror="true">{!loading ? data.pages.edges[0].node.gallery.title : null}</h2>
+          data-aos-mirror="true">{!loading ? data.nodeByUri.gallery.title : null}</h2>
         <div className='gallerygrid'>
           {
-            !loading ? data?.pages?.edges[0]?.node?.gallery?.gallery?.map((item, index) => {
+            !loading ? data?.nodeByUri?.gallery?.gallery?.map((item, index) => {
               return (
                 <img data-aos="fade-up"
                   data-aos-offset="200"

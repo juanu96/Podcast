@@ -10,7 +10,7 @@ import {
 } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: 'http://podcast.local/graphql',
+  uri: 'https://podcasts.morpheus-creations.com/graphql',
   cache: new InMemoryCache()
 });
 
@@ -26,12 +26,3 @@ root.render(
     </ApolloProvider>
   </React.StrictMode>
 )
-
-/* ReactDOM.render(
-  <ApolloProvider client={client}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </ApolloProvider>,
-  document.getElementById('root')
-);*/

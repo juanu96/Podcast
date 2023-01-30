@@ -76,4 +76,5 @@
 
 html{
     font-family: "poppins";
+    scroll-behavior: smooth;
 }

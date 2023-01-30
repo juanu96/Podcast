@@ -4,12 +4,12 @@
         @apply w-4/5 m-auto py-5;
 
         .buttonsMenu{
-            @apply flex gap-5;
+            @apply flex gap-5 justify-end;
         }
     }
 
     .menuDesktop {
-        @apply grid grid-flow-col items-center justify-items-center;
+        @apply grid grid-flow-col items-center;
     }
 }
 

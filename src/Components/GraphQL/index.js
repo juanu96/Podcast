@@ -4,7 +4,7 @@ export const RECENTPODCASTS = gql`
 {
   podcasts(first: 4) {
     nodes {
-      link
+      uri
       title
     }
   }
@@ -152,19 +152,52 @@ export const POSTSLIDER = gql`
 `
 
 export const GALLERY = gql`
-  {
-    pages(where: {id: 8}) {
-      edges {
-        node {
-          gallery {
-            title
+query NewQuery($uri: String!) {
+  nodeByUri(uri: $uri) {
+    ... on Page {
+      	gallery{
+        	title
             gallery {
               mediaItemUrl
               title
             }
           }
-        }
-      }
-    }
-  }
+    		}
+  		}
+}
 `;
+
+export const HEROSECTION = gql`
+query NewQuery($uri: String!) {
+  nodeByUri(uri: $uri) {
+    ... on Page {
+      	home{
+          herosection {
+              content
+              fieldGroupName
+              subheader
+              textheader
+              listenon {
+                companylogo {
+                  image {
+                    mediaItemUrl
+                    title
+                  }
+                  link
+                }
+              }
+              image {
+                enableCustomBackgroundImage
+                heroimage {
+                  mediaItemUrl
+                }
+                custombackground {
+                  mediaItemUrl
+                }
+              }
+            }
+        }
+    		}
+  		}
+}
+    `;

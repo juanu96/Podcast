@@ -64,7 +64,7 @@ export default function Subscribe() {
         }
     }, [loading, data])
     return (
-        <div className='suscribeContainer'>
+        <div id="suscribe" className='suscribeContainer'>
             <div className='suscribeRow'>
                 <h2
                     data-aos="fade-up"
@@ -80,7 +80,13 @@ export default function Subscribe() {
                     data-aos-duration="1000"
                     data-aos-easing="ease-in-out"
                     data-aos-mirror="true">{SubscribeSection ? SubscribeSection.content : null}</p>
-                <div className='newsletter'>
+                <div className='newsletter'
+                    data-aos="fade-up"
+                    data-aos-offset="200"
+                    data-aos-delay="50"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out"
+                    data-aos-mirror="true">
                     <input onChange={(e) => setEmail(e.target.value)} className='email' type='email' placeholder={SubscribeSection ? SubscribeSection.placeholder : null} />
                     <h3 className='btnSuscribe' onClick={() => sendMessage()}>{SubscribeSection ? SubscribeSection.button : null} </h3>
 

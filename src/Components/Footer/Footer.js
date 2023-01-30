@@ -65,7 +65,7 @@ export default function Footer() {
                                 !recentPodcastLoading ? recentPodcastData.podcasts.nodes.map((item, index) => {
                                     return (
                                         <li className='itemfooter' key={index}>
-                                            <a href={item.link}>{item.title}</a>
+                                            <a href={item.uri}>{item.title}</a>
                                         </li>
                                     );
                                 }) : null
