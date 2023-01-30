@@ -27,11 +27,11 @@ export default function Subscribe() {
     const [email, setEmail] = useState(null)
     const [Message, setMessage] = useState("");
     const [enviado, setEnviado] = useState(false);
-
+    const [validateError, setValidateError] = useState(null);
     const sendMessage = async () => {
         if (enviado === false) {
             const contactFormId = "173";
-            const contactFormUrl = `http://podcast.local/wp-json/contact-form-7/v1/contact-forms/${contactFormId}/feedback`;
+            const contactFormUrl = `https://podcasts.morpheus-creations.com/wp-json/contact-form-7/v1/contact-forms/${contactFormId}/feedback`;
             const formData = new FormData();
 
             formData.append("Email", email);
@@ -53,6 +53,7 @@ export default function Subscribe() {
                     const data = JSON.parse(result);
                     setEnviado(true);
                     setMessage(data.message);
+                    setEmail('')
                 })
                 .catch((error) => console.log("error", error));
         }
@@ -63,6 +64,18 @@ export default function Subscribe() {
             setSubscribeSection(data?.pages?.edges[0]?.node?.subscribe?.subscribesection)
         }
     }, [loading, data])
+
+    const isValidEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+
+    const validateEmail = () => {
+        if (email && email.match(isValidEmail)) {
+            sendMessage()
+            setValidateError('Email sent')
+        } else {
+            setValidateError('Please verify the email is valid');
+        }
+    }
+
     return (
         <div id="suscribe" className='suscribeContainer'>
             <div className='suscribeRow'>
@@ -87,11 +100,11 @@ export default function Subscribe() {
                     data-aos-duration="1000"
                     data-aos-easing="ease-in-out"
                     data-aos-mirror="true">
-                    <input onChange={(e) => setEmail(e.target.value)} className='email' type='email' placeholder={SubscribeSection ? SubscribeSection.placeholder : null} />
-                    <h3 className='btnSuscribe' onClick={() => sendMessage()}>{SubscribeSection ? SubscribeSection.button : null} </h3>
+                    <input value={email} onChange={(e) => setEmail(e.target.value)} className='email' type='email' placeholder={SubscribeSection ? SubscribeSection.placeholder : null} />
+                    <h3 className='btnSuscribe' onClick={() => validateEmail()}>{SubscribeSection ? SubscribeSection.button : null} </h3>
 
                 </div>
-                <p>{Message}</p>
+                <p>{Message ? Message : validateError ? validateError : null}</p>
             </div>
         </div>
     )
