@@ -1,0 +1,19 @@
+.postSection{
+    @apply w-full py-10;
+    .postRow{
+        @apply w-4/5 m-auto;
+        img{
+            @apply w-3/5 h-[350px] m-auto object-cover;
+        }
+        h1{
+            @apply text-4xl leading-tight text-center font-bold max-w-3xl m-auto my-8;
+        }
+        .content{
+            @apply max-w-6xl m-auto;
+
+            p{
+                @apply text-justify mb-8;
+            }
+        }
+    }
+}

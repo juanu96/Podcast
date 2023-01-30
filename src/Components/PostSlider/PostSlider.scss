@@ -1,0 +1,61 @@
+.PodcastSliderContainer {
+    @apply w-full py-14 md:py-20;
+    .PodcastRow {
+        @apply w-4/5 m-auto;
+
+        .slider {
+            .swiper {
+                @apply px-4;
+            }
+            .sliderNextPrev {
+                @apply flex m-auto justify-center gap-5;
+                div {
+                    @apply w-min text-2xl hover:text-primary cursor-pointer;
+                }
+            }
+        }
+
+        .post-item {
+            @apply max-w-[370px] shadow-xl my-8 rounded-md;
+            .post-info {
+                @apply border-l-primary border-l-4 px-10;
+                .post-by {
+                    @apply flex justify-between;
+
+                    .author {
+                        @apply text-primary;
+                    }
+                    .date {
+                        @apply text-[#ACACAC];
+                    }
+                }
+            }
+
+            .post-content {
+                @apply px-10 py-8;
+
+                .title {
+                    @apply text-2xl mb-8;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+                .excerpt {
+                    @apply text-sm mb-14;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                }
+                .buttonslider {
+                    @apply mb-8;
+                }
+            }
+        }
+    }
+}

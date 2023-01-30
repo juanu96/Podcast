@@ -1,0 +1,70 @@
+.menuSection {
+    @apply bg-[#F6F7F8] w-full;
+    .menuRow {
+        @apply w-4/5 m-auto py-5;
+
+        .buttonsMenu{
+            @apply flex gap-5;
+        }
+    }
+
+    .menuDesktop {
+        @apply grid grid-flow-col items-center justify-items-center;
+    }
+}
+
+#mobileMenu {
+    @apply w-0 z-50 overflow-y-scroll;
+    
+
+    .buttonsMenu{
+        @apply flex flex-col sm:flex-row justify-center gap-5 py-10 text-sm md:text-base w-fit mx-auto md:w-full;
+    }
+}
+
+.mobileMenuContent {
+    @apply flex justify-between items-center;
+    .menuIcon {
+        @apply text-5xl;
+    }
+}
+
+.overlay {
+    @apply h-full w-0 fixed z-10 top-0 left-0 bg-secondary overflow-hidden duration-500;
+}
+
+.overlay-content {
+    @apply relative mt-[13%] w-full text-center;
+
+    a {
+        @apply pt-6 text-2xl md:text-4xl text-white hover:text-primary block duration-300;
+    }
+}
+
+.overlay p {
+    @apply pt-2 text-4xl text-tertiary block duration-300;
+}
+
+.overlay p:hover,
+.overlay p:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    @apply top-3 absolute right-8 text-5xl text-primary;
+}
+
+/* @media screen and (max-height: 450px) {
+    .overlay p {
+        font-size: 20px;
+    }
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+} */
+
+#mobileMenu.menuOpen {
+    @apply w-full;
+}

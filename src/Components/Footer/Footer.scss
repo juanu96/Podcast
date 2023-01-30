@@ -1,0 +1,46 @@
+.footer {
+    @apply w-full pt-20;
+    .footerrow {
+        @apply w-4/5 m-auto;
+
+        .footercontent {
+            @apply grid gap-8 grid-cols-1 md:grid-cols-2 xl:gap-0 xl:grid-cols-[40%,20%,20%,20%];
+
+            p,
+            a {
+                @apply text-sm;
+            }
+
+            .socialIcon {
+                @apply flex justify-between items-center max-w-[300px];
+                a {
+                    @apply bg-secondary text-xl text-white w-10 h-10 rounded-full flex justify-center items-center;
+                }
+            }
+
+            .titlefooter {
+                @apply text-[#222222] mb-5;
+            }
+
+            .colum-footer .itemfooter a {
+                @apply leading-10 text-[#999999] text-[14px];
+            }
+
+            .colum-footer .content-logo {
+                @apply my-8 max-w-xs;
+            }
+
+            .colum-footer .podcastlogo {
+                @apply mb-5;
+            }
+        }
+
+        .Rights{
+            @apply mt-10 py-10 text-center border-t-2;
+
+            a{
+                @apply hover:text-primary;
+            }
+        }
+    }
+}
